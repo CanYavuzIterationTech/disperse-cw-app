@@ -14,6 +14,7 @@ import { useCw20BaseSendMutation } from "@/contracts/Cw20Base.react-query";
 import { Input } from "./ui/input";
 import { useWallet } from "@cosmos-kit/react";
 import { Cw20BaseClient } from "@/contracts/Cw20Base.client";
+import { CHAIN_NAME } from "@/config";
 
 export const CW20Dispenser = () => {
   const [input, setInput] = useState("");
@@ -46,7 +47,7 @@ export const CW20Dispenser = () => {
         return;
       }
 
-      const dorovotaWallet = mainWallet.getChainWallet("mantrachaintestnet");
+      const dorovotaWallet = mainWallet.getChainWallet(CHAIN_NAME);
 
       if (!dorovotaWallet) {
         console.error("dorovotaWallet is null");

@@ -1,4 +1,5 @@
 "use client";
+import { CHAIN_NAME } from "@/config";
 import { DisperseCwClient } from "@/contracts/DisperseCw.client";
 import { useWallet } from "@cosmos-kit/react";
 import { useEffect, useState } from "react";
@@ -20,7 +21,7 @@ export function useDisperseCwClient(contractAddress: string) {
         return;
       }
 
-      const dorovotaWallet = mainWallet.getChainWallet("mantrachaintestnet");
+      const dorovotaWallet = mainWallet.getChainWallet(CHAIN_NAME);
 
       if (!dorovotaWallet) {
         console.error("dorovotaWallet is null");

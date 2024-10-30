@@ -1,1 +1,1 @@
-export const CHAIN_NAME = "mantrachaintestnet"
+export const CHAIN_NAME = "mantrachaintestnet2"

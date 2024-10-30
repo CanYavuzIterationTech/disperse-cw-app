@@ -1,4 +1,5 @@
 "use client";
+import { CHAIN_NAME } from "@/config";
 import { Cw20BaseQueryClient } from "@/contracts/Cw20Base.client";
 import { useWallet } from "@cosmos-kit/react";
 
@@ -19,7 +20,7 @@ export function useCw20BaseQueryClient(contractAddress: string) {
         return;
       }
 
-      const dorovotaWallet = mainWallet.getChainWallet("mantrachaintestnet");
+      const dorovotaWallet = mainWallet.getChainWallet(CHAIN_NAME);
 
       if (!dorovotaWallet) {
         console.error("dorovotaWallet is null");
