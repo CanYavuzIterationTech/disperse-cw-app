@@ -26,12 +26,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const colors = {
+    sun: "#F8B994",
+    pink: "#FF97D6",
+    dark: "#201E1D",
+  };
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: colors.dark }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen p-8`}
       >
         <Wrapper>
+          <div
+            style={{ backgroundColor: colors.sun, color: colors.dark }}
+            className="max-w-4xl mx-auto mb-6 py-2 px-4 rounded-lg text-center font-medium"
+          >
+            🔬 MANTRA Chain Testnet (Dukong) Testing Environment
+          </div>
           <Navbar />
           {children}{" "}
         </Wrapper>

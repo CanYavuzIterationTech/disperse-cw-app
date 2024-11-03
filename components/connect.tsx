@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import React, { MouseEventHandler } from "react";
 
 import { Button as UIButton } from "@/components/ui/button";
 
@@ -18,12 +18,19 @@ export function Button({
   text,
   disabled,
   onClick = noop,
-}: Readonly<ButtonProps>) {
+  className,
+  style,
+}: Readonly<ButtonProps> & {
+  className?: string;
+  style?: React.CSSProperties;
+}) {
   return (
     <UIButton
       onClick={onClick}
       //leftIcon={icon}
       disabled={disabled}
+      className={className}
+      style={style}
       //isLoading={loading}
       /** 
       domAttributes={{
@@ -42,46 +49,98 @@ export function Button({
 export const ButtonConnect = ({
   text = "Connect Wallet",
   onClick = noop,
-}: ConnectProps) => (
-  <Button text={text} icon="walletFilled" onClick={onClick} />
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button
+    text={text}
+    icon="walletFilled"
+    className={className}
+    onClick={onClick}
+    style={style}
+  />
 );
 
 export const ButtonConnected = ({
   text = "My Wallet",
   onClick = noop,
-}: ConnectProps) => (
-  <Button text={text} icon="walletFilled" onClick={onClick} />
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button
+    text={text}
+    icon="walletFilled"
+    className={className}
+    style={style}
+    onClick={onClick}
+  />
 );
 
 export const ButtonDisconnected = ({
   text = "Connect Wallet",
   onClick = noop,
-}: ConnectProps) => (
-  <Button text={text} icon="walletFilled" onClick={onClick} />
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button
+    text={text}
+    icon="walletFilled"
+    className={className}
+    onClick={onClick}
+    style={style}
+  />
 );
 
 export const ButtonConnecting = ({
   text = "Connecting ...",
   loading = true,
-}: ConnectProps) => <Button text={text} loading={loading} />;
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button text={text} loading={loading} className={className} style={style} />
+);
 
 export const ButtonRejected = ({
   text = "Reconnect",
   onClick = noop,
-}: ConnectProps) => (
-  <Button text={text} icon="walletFilled" onClick={onClick} />
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button
+    text={text}
+    icon="walletFilled"
+    className={className}
+    onClick={onClick}
+    style={style}
+  />
 );
 
 export const ButtonError = ({
   text = "Change Wallet",
   onClick = noop,
-}: ConnectProps) => (
-  <Button text={text} icon="walletFilled" onClick={onClick} />
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button
+    text={text}
+    icon="walletFilled"
+    className={className}
+    onClick={onClick}
+    style={style}
+  />
 );
 
 export const ButtonNotExist = ({
   text = "Install Wallet",
   onClick = noop,
-}: ConnectProps) => (
-  <Button text={text} icon="walletFilled" onClick={onClick} />
+  className,
+  style,
+}: ConnectProps & { className?: string; style?: React.CSSProperties }) => (
+  <Button
+    text={text}
+    icon="walletFilled"
+    className={className}
+    onClick={onClick}
+    style={style}
+  />
 );
